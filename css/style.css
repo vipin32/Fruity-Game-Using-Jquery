@@ -1,0 +1,121 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  background: radial-gradient(circle,#ccc,#fff);
+}
+
+#container{
+  background-color: #99DDEA;
+  width: 800px;
+  height: 650px;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 25px;
+  box-shadow: 0px 4px 0px #009de4;
+  position: relative;
+}
+
+#trialsLeft{
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background-color: #F1FF92;
+  padding: 7px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 0px #9da853;
+  float: left;
+  display: none;
+}
+
+#score{
+  position: absolute;
+  left: 620px;
+  background-color: #F1FF92;
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 0px #9da853;
+  float: right;
+  padding: 10px;
+  text-align: center;
+}
+
+#fruitContainer{
+  width: 670px;
+  height: 390px;
+  background-color: white;
+  margin: 53px auto;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 0px purple;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#catchFruit{
+   background-color: #B481D9;
+   width: 500px;
+   height: 40px;
+   box-shadow: 0px 4px 0px #8153a8;
+   margin: 0px auto;
+   margin-bottom: 20px;
+   padding: 10px;
+   text-align: center;
+   position: relative;
+   transition: all 0.2s;
+}
+
+#startreset{
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 200px;
+  height: 40px;
+  box-shadow: 0px 4px 0px #8153a8;
+  margin: 0px auto;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s;
+}
+
+#catchFruit:hover,#startreset:hover{
+  cursor: pointer;
+  background-color: #9C89F6;
+  color: white;
+  box-shadow: 0px 4px 0px #6b54d3;
+}
+
+#catchFruit:active,#startreset:active{
+  box-shadow: 0px 0px #6b54d3;
+  top: 4px;
+}
+
+#gameover{
+  position: absolute;
+  top: 120px;
+  left: 100px;
+  width: 600px;
+  height: 300px;
+  background: linear-gradient(orange,red);
+  color: white;
+  text-align: center;
+  font-size: 4em;
+  padding: 40px;
+  display: none;
+  z-index: 2;
+}
+
+.life {
+    width: 22px;
+    height: 23px;
+    margin: 0 3px;
+}
+
+#fruit1{
+    display: none;
+    position: absolute;
+}
