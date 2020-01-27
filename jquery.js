@@ -10,55 +10,46 @@ $(function(){
       // Click on Start Reset Button
       $("#startreset").click(function(){
         //Are we playing?
-        if(playing == true)           //yes
+        if(playing == true)          
         {
           //Reload Page
           location.reload();
         }
-        else                          //no
+        else                          
         {
             playing = true;
             score = 0;
             trialsLeft = 3;
 
-            //Hide Gameover Div
             $("#gameover").hide();
 
-            //Change button Text To "Reset Game"
             $("#startreset").html("Reset Game");
-            //Set Score to Zero Initially
             $("#scorevalue").html(score);
 
-            //Show Trials Box
             $("#trialsLeft").show();
-            //Show Trials Left (Life Left)
-
+  
             showHearts();
 
             // Create Random Fruit
             startAction();
-
-            // $("#fruitContainer").append('<img src="images/'+fruit[Math.round(8*Math.random())]+'.png">');
         }
       });
 
-
+      //Slice a fruit and increase score
       $("#fruit1").mouseover(function(){
         score++;
         $("#scorevalue").html(score);
 
-        // document.getElementById("slicesound").play();
         $("#slicesound")[0].play();
         clearInterval(action);
 
         $("#fruit1").hide();
-        // $("#fruit1").hide("explode");
 
         setTimeout(startAction);
       });
 
-      // Functions Area
-
+      //All Functions
+      
       function showHearts()
       {
         $("#trialsLeft").empty();
@@ -71,11 +62,10 @@ $(function(){
       function startAction(){
         //Step 1
         $("#fruit1").show();
-        // Generate a fruit from fruit array
+        // Generating a fruit from fruit array
         $("#fruit1").attr('src', 'images/'+fruit[Math.round(8*Math.random())]+'.png');
 
-        //Random Steps : Left Postion is altered Randomly whereas Top Position is fixed
-        //Container Width is 670 and image width is 100 So : 670-100 = 570
+        //Container Width is 670 and image width is 100 So :So Random position is between 670-100 = 570
         $("#fruit1").css({'left': Math.round(570* Math.random()),'top': -50});
 
         steps = 1 + Math.round(5*Math.random());
@@ -94,13 +84,12 @@ $(function(){
                   // Generate a fruit from fruit array
                   $("#fruit1").attr('src', 'images/'+fruit[Math.round(8*Math.random())]+'.png');
 
-                  //Random Steps : Left Postion is altered Randomly whereas Top Position is fixed
-                  //Container Width is 670 and image width is 100 So : 670-100 = 570
+                  //Container Width is 670 and image width is 100 So :So Random position is between 670-100 = 570
                   $("#fruit1").css({'left': Math.round(570* Math.random()),'top': -50});
 
                   trialsLeft --;
 
-                  //Reduce Hearts to trialsLeft (Life Left)
+                  //Decrease Hearts(Total TrialsLeft)
                   showHearts();
 
                 }
